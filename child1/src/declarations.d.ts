@@ -1,1 +1,1 @@
-declare module 'parent/AppContext';
+declare module 'shared/AppContext';

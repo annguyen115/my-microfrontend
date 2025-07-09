@@ -572,6 +572,7 @@ module.exports = function (webpackEnv) {
                 },
                 remotes: {
                     parent: "parent@http://localhost:3000/remoteEntry.js", // ← thêm dòng này
+                    shared: "shared@http://localhost:3004/remoteEntry.js"
                 },
                 shared: {
                     react: { singleton: true, eager: true },

@@ -565,18 +565,14 @@ module.exports = function (webpackEnv) {
         },
         plugins: [
             new ModuleFederationPlugin({
-                name: "child1",
+                name: "shared",
                 filename: "remoteEntry.js",
                 exposes: {
-                    "./Child1App": "./src/Child1App",
-                },
-                remotes: {
-                    parent: "parent@http://localhost:3000/remoteEntry.js", // ← thêm dòng này
-                    shared: "shared@http://localhost:3004/remoteEntry.js"
+                    "./AppContext": "./src/AppContext",
                 },
                 shared: {
-                    react: { singleton: true, eager: true },
-                    "react-dom": { singleton: true, eager: true },
+                    react: { singleton: true },
+                    "react-dom": { singleton: true },
                 },
             }),
             // Generates an `index.html` file with the <script> injected.
