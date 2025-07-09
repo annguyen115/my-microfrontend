@@ -571,7 +571,7 @@ module.exports = function (webpackEnv) {
                     child1: "child1@http://localhost:3001/remoteEntry.js",
                     child2: "child2@http://localhost:3002/remoteEntry.js",
                     child3: "child3@http://localhost:3003/remoteEntry.js",
-                    shared: "shared@http://localhost:3004/remoteEntry.js"
+                    shared: "shared@http://localhost:3004/remoteEntry.js",
                 },
                 shared: {
                     react: { singleton: true, eager: true },

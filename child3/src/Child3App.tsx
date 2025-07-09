@@ -1,5 +1,5 @@
 import React from "react";
-import { useAppContext } from "parent/AppContext"; // CRA sẽ warning, nhưng vẫn chạy được
+import { useAppContext } from 'shared/AppContext'; // CRA sẽ warning, nhưng vẫn chạy được
 
 const Child3App = () => {
   const { message, setMessage } = useAppContext();
