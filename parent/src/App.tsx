@@ -1,25 +1,22 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { AppProvider } from './context/AppContext';
+
+const Child1App = React.lazy(() => import('child1/Child1App'));
+const Child2App = React.lazy(() => import('child2/Child2App'));
+const Child3App = React.lazy(() => import('child3/Child3App'));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppProvider>
+      <h1>Parent App</h1>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Child1App />
+        <Child2App />
+        <Child3App />
+      </Suspense>
+    </AppProvider>
   );
 }
 

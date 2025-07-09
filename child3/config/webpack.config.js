@@ -570,6 +570,9 @@ module.exports = function (webpackEnv) {
                 exposes: {
                     "./Child3App": "./src/Child3App",
                 },
+                remotes: {
+                    parent: "parent@http://localhost:3000/remoteEntry.js", // ← thêm dòng này
+                },
                 shared: {
                     react: { singleton: true, eager: true },
                     "react-dom": { singleton: true, eager: true },
